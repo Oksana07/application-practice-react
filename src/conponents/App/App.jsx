@@ -1,10 +1,12 @@
 import MainPage from '../_pages/MainPage';
+import TransationPage from '../_pages/TransactionPage';
 
 function App () {
   return (
     <>
-  <MainPage title={"MainPage-JSX"}/>
-  {MainPage({title: "MainPage-JS"})}
+  {/* <MainPage /> */}
+  <TransationPage />
+
   </>
   );
 }
