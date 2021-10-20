@@ -1,7 +1,12 @@
-import "./App.css";
+import MainPage from '../_pages/MainPage';
 
-function App() {
-  return <h1>App</h1>;
+function App () {
+  return (
+    <>
+  <MainPage title={"MainPage-JSX"}/>
+  {MainPage({title: "MainPage-JS"})}
+  </>
+  );
 }
 
 export default App;
