@@ -4,16 +4,16 @@ const LabelInput = ({
     name, 
     value, 
     placeholder = null, 
-    onChange,
+    cbOnChange,
 }) => {
     return (
         <label>
-            {title && <p>{title}</p>}
+        {title && <p>{title}</p>}
         <input 
         type={type} 
         name={name} 
         value={value} 
-        onChange={onChange} 
+        onChange={cbOnChange} 
         placeholder={placeholder}
         />
     </label>
