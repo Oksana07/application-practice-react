@@ -1,56 +1,50 @@
-import { Component } from "react";
+import { useState } from "react";
 import MainPage from "../_pages/MainPage";
 import TransationPage from "../_pages/TransactionPage";
 import BalancePage from "../_pages/BalancePage";
 
-class App extends Component {
-state = {
-  activePage: "", 
-  costs:[],
-  incomes:[],
- };
+const App = () => {
+// state = {
+const [activePage, setActivePage]= useState("");
+const [costs, setCosts]= useState([]);
+const [incomes, setIncomes]= useState([]);
 
- handleOpenPage = (activePage) => {
-   this.setState({activePage});
- };
+const handleOpenPage = (activePage) => setActivePage(activePage);
 
- handeleClosePage = ()=> this.setState({activePage: ""}) ;
+const handeleClosePage = ()=> setActivePage("");
 
- addTransaction =({transType, transaction})=>{
-   this.setState(prevState =>({[transType]:[...prevState[transType], transaction]
-  }));
+const addTransaction =({transType, transaction})=>{
+  transType === "costs" && 
+  setCosts (prevCosts => [...prevCosts, transaction]);
+  transType === "costs" && 
+  setIncomes (prevIncomes => [...prevIncomes, transaction]);
  };
  
-  render () {
-    const {activePage} = this.state;
-    switch(activePage) {
+
+switch(activePage) {
   case "costs":
   return (
   <TransationPage  
   transType={activePage} 
-  handeleClosePage= {this.handeleClosePage} 
-  addTransaction={this.addTransaction}
+  handeleClosePage= {handeleClosePage} 
+  addTransaction={addTransaction}
   />
   );
   case "incomes":
   return (
   <TransationPage
    transType={activePage} 
-   handeleClosePage={this.handeleClosePage}
-   addTransaction={this.addTransaction}
+   handeleClosePage={handeleClosePage}
+   addTransaction={addTransaction}
    />
   );
   case "balance":
-  return 
-  <BalancePage />;
+  return <BalancePage />;
   default:
-    return (
-    <MainPage 
-    handleOpenPage ={this.handleOpenPage}
+    return <MainPage 
+    handleOpenPage ={handleOpenPage}
     />
-    );
     }
-  }
 };
 
 export default App;
