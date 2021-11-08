@@ -21,7 +21,7 @@ const TransactionPage = ({transType, addTransaction, handeleClosePage}) => {
         setForm(prevForm => ({...prevForm, [name]: value}))
     };
 
-    const handeleSubmit=e=>{
+    const handeleSubmit=()=>{
             addTransaction({
             transType, 
             transaction: {...form, id: shortid.generate()},
@@ -29,7 +29,6 @@ const TransactionPage = ({transType, addTransaction, handeleClosePage}) => {
         handeleClosePage();
     };
 
-        const {date,time,category,sum,currency,comment}=form;
         return (
             <section> 
             <GoBackHeader 

@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import MainPage from "../_pages/MainPage";
 import TransationPage from "../_pages/TransactionPage";
 import BalancePage from "../_pages/BalancePage";
+import TransactionHistoryPage from '../_pages/TransactionHistoryPage';
 
 const App = () => {
 // state = {
@@ -20,6 +21,20 @@ const addTransaction =({transType, transaction})=>{
   setIncomes (prevIncomes => [...prevIncomes, transaction]);
  };
  
+ useEffect(()=>{
+   const parsedCosts = JSON.parse(localStorage.getItem('costs'))
+   const parsedIncomes = JSON.parse(localStorage.getItem('incomes'))
+   parsedCosts && setCosts(parsedCosts);
+   parsedIncomes && setIncomes(parsedIncomes);
+ }, []);
+
+useEffect(()=>{
+  localStorage.setItem('costs', JSON.stringify(costs))
+}, [costs]);
+
+useEffect(()=>{
+  localStorage.setItem('incomes', JSON.stringify(incomes))
+}, [incomes]);
 
 switch(activePage) {
   case "costs":
@@ -40,10 +55,14 @@ switch(activePage) {
   );
   case "balance":
   return <BalancePage />;
+    case "costsHistory":
+    return <TransactionHistoryPage />;
+    case "incomesHistory":
+    return <TransactionHistoryPage />;
   default:
     return <MainPage 
-    handleOpenPage ={handleOpenPage}
-    />
+    handleOpenPage = {handleOpenPage}
+    />;
     }
 };
 
