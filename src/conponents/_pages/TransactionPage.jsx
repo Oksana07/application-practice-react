@@ -1,16 +1,16 @@
 import { useState } from 'react';
 import GoBackHeader from '../_share/GoBackHeader/GoBackHeader';
-import LabelInput from '../_share/LabelInput/LabelInput';
 import shortid from 'shortid';
+import Form from '../_share/Form/Form';
+import tratnsactionFormOption from '../../assets/data/options/tratnsactionFormOption.json';
 
 
 
-const TransationPage = ({transType, addTransaction, handeleClosePage}) => {
-    // state={
+const TransactionPage = ({transType, addTransaction, handeleClosePage}) => {
     const [form, setForm] = useState({
         date:"",
          time:"",
-         category:"Еда",
+         category: transType === "incomes" ? "Зарплата" : "Еда",
          sum:"",
         currency:"USD",
         comment:"",
@@ -22,7 +22,6 @@ const TransationPage = ({transType, addTransaction, handeleClosePage}) => {
     };
 
     const handeleSubmit=e=>{
-        e.preventDefault()
             addTransaction({
             transType, 
             transaction: {...form, id: shortid.generate()},
@@ -32,13 +31,22 @@ const TransationPage = ({transType, addTransaction, handeleClosePage}) => {
 
         const {date,time,category,sum,currency,comment}=form;
         return (
+            <section> 
             <GoBackHeader 
             title={transType === "costs" ? "Расход" : "Доходы"}
             cbGoBack={handeleClosePage}
-            /> 
-            
-        )
-    };
-    
+            />
+             <Form
+            cbOnSubmit={handeleSubmit} 
+            handleChange={handleChange} 
+            formOpts={tratnsactionFormOption} 
+            formValues={form}
+            btnTitle={"Ok"}
+             />          
+             </section>
+        ); 
+     } 
+       
+  
 
-export default TransationPage;
+export default TransactionPage;

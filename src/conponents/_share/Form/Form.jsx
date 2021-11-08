@@ -1,4 +1,12 @@
-const Form = ({cbOnSubmit, handleChange, formOpts, formValues, btnTitle}) => {
+import LabelInput from "../LabelInput/LabelInput";
+
+const Form = ({
+    cbOnSubmit, 
+    handleChange, 
+    formOpts, 
+    formValues, 
+    btnTitle
+}) => {
     const handeleSubmit = (e) => {
         e.preventDefault();
         cbOnSubmit();
@@ -10,7 +18,7 @@ const Form = ({cbOnSubmit, handleChange, formOpts, formValues, btnTitle}) => {
                 <LabelInput
                 type={type}
                 title= {title}
-                name={date}
+                name={name}
                 value={formValues[name]}
                 placeholder={placeholder}
                 cbOnChange={handleChange}
