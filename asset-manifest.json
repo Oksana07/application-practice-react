@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/application-practice-react/static/css/main.5951bb8c.chunk.css",
-    "main.js": "/application-practice-react/static/js/main.f0c93a2a.chunk.js",
-    "main.js.map": "/application-practice-react/static/js/main.f0c93a2a.chunk.js.map",
+    "main.js": "/application-practice-react/static/js/main.d1bb3139.chunk.js",
+    "main.js.map": "/application-practice-react/static/js/main.d1bb3139.chunk.js.map",
     "runtime-main.js": "/application-practice-react/static/js/runtime-main.491f6065.js",
     "runtime-main.js.map": "/application-practice-react/static/js/runtime-main.491f6065.js.map",
     "static/css/2.bc922b9c.chunk.css": "/application-practice-react/static/css/2.bc922b9c.chunk.css",
-    "static/js/2.0c52eff6.chunk.js": "/application-practice-react/static/js/2.0c52eff6.chunk.js",
-    "static/js/2.0c52eff6.chunk.js.map": "/application-practice-react/static/js/2.0c52eff6.chunk.js.map",
+    "static/js/2.bac6b306.chunk.js": "/application-practice-react/static/js/2.bac6b306.chunk.js",
+    "static/js/2.bac6b306.chunk.js.map": "/application-practice-react/static/js/2.bac6b306.chunk.js.map",
     "index.html": "/application-practice-react/index.html",
     "static/css/2.bc922b9c.chunk.css.map": "/application-practice-react/static/css/2.bc922b9c.chunk.css.map",
     "static/css/main.5951bb8c.chunk.css.map": "/application-practice-react/static/css/main.5951bb8c.chunk.css.map",
-    "static/js/2.0c52eff6.chunk.js.LICENSE.txt": "/application-practice-react/static/js/2.0c52eff6.chunk.js.LICENSE.txt"
+    "static/js/2.bac6b306.chunk.js.LICENSE.txt": "/application-practice-react/static/js/2.bac6b306.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.491f6065.js",
     "static/css/2.bc922b9c.chunk.css",
-    "static/js/2.0c52eff6.chunk.js",
+    "static/js/2.bac6b306.chunk.js",
     "static/css/main.5951bb8c.chunk.css",
-    "static/js/main.f0c93a2a.chunk.js"
+    "static/js/main.d1bb3139.chunk.js"
   ]
 }
