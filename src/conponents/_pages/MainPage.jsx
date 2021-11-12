@@ -28,7 +28,7 @@ const MainPage = ({handleOpenPage}) =>{
     activePage='balance'
     handleOpenPage={handleOpenPage}
     />
-    <StatisticsBtns />
+    <StatisticsBtns handleOpenPage={handleOpenPage}/>
 </section>
 
     );

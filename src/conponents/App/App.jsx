@@ -5,7 +5,6 @@ import BalancePage from "../_pages/BalancePage";
 import TransactionHistoryPage from '../_pages/TransactionHistoryPage';
 
 const App = () => {
-// state = {
 const [activePage, setActivePage]= useState("");
 const [costs, setCosts]= useState([]);
 const [incomes, setIncomes]= useState([]);
@@ -53,16 +52,25 @@ switch(activePage) {
    addTransaction={addTransaction}
    />
   );
-  case "balance":
-  return <BalancePage />;
+  
     case "costsHistory":
-    return <TransactionHistoryPage />;
+    return (
+    <TransactionHistoryPage 
+    handeleClosePage={handeleClosePage} 
+    transactions= {costs}
+    />
+    );
     case "incomesHistory":
-    return <TransactionHistoryPage />;
+    return (
+    <TransactionHistoryPage 
+    handeleClosePage={handeleClosePage} 
+    transactions= {incomes}
+    />
+    );
+    case "balance":
+  return <BalancePage />;
   default:
-    return <MainPage 
-    handleOpenPage = {handleOpenPage}
-    />;
+    return <MainPage handleOpenPage = {handleOpenPage}/>;
     }
 };
 
