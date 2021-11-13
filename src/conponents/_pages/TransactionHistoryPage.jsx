@@ -1,8 +1,12 @@
+import { useAppContext } from '../AppProvider/AppProvider';
 import GoBackHeader from "../_share/GoBackHeader/GoBackHeader";
 import LabelInput from "../_share/LabelInput/LabelInput";
 
-const TransactionHistoryPage = ({transactions = [], handeleClosePage})=>{
-    const total = transactions.reduce((acc, { sum }) => acc + Number(sum), 0);
+
+const TransactionHistoryPage = ({transactions})=>{
+
+  const {handeleClosePage} = useAppContext();
+    const allSum = transactions.reduce((acc, { sum }) => acc + Number(sum), 0);
 
     return (
     <section>

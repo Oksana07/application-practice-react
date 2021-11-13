@@ -4,9 +4,12 @@ import {mainInfoCosts,
         mainInfoIncomes,
         mainInfoBalance
         } from '../../assets/data/mainInfoOptions.json';
+import { useAppContext } from "../AppProvider/AppProvider";
 
 
-const MainPage = ({handleOpenPage}) =>{
+const MainPage = () =>{
+    const {handleOpenPage} = useAppContext();
+
     return (
 <section>
     <h1>Журнал росходов</h1>
