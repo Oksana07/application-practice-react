@@ -5,6 +5,7 @@ import {mainInfoCosts,
         mainInfoBalance
         } from '../../assets/data/mainInfoOptions.json';
 import { useAppContext } from "../AppProvider/AppProvider";
+import { useRouteMatch } from "react-router";
 
 
 const MainPage = () =>{
