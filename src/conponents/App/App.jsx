@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import MainPage from "../_pages/MainPage";
 import TransationPage from "../_pages/TransactionPage";
 import BalancePage from "../_pages/BalancePage";
@@ -12,11 +12,18 @@ const {activePage, costs, incomes} = useAppContext();
 
 return (
   <>
-   <Route path="/" component= {MainPage} />
-<Route path="/">
-<MainPage />
-</Route>
-</>
+{/* <Route path="/">
+<MainPage costs={costs} />
+</Route> */}
+<Switch>
+ <Route 
+ exact 
+ path="/" component= {MainPage} />
+ <Route path={"/transation/:transType"} component={TransationPage} />
+ <Route path={"/history/:transType"} component={TransactionHistoryPage}/>
+ <Route path={"/balance"} component={BalancePage}/>
+ </Switch>
+ </>
 );
 };
 

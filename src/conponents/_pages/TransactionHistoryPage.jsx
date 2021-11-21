@@ -3,7 +3,7 @@ import GoBackHeader from "../_share/GoBackHeader/GoBackHeader";
 import LabelInput from "../_share/LabelInput/LabelInput";
 
 
-const TransactionHistoryPage = ({transactions})=>{
+const TransactionHistoryPage = ({transactions=[]})=>{
 
   const {handeleClosePage} = useAppContext();
     const allSum = transactions.reduce((acc, { sum }) => acc + Number(sum), 0);

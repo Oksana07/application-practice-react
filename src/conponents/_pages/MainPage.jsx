@@ -5,11 +5,17 @@ import {mainInfoCosts,
         mainInfoBalance
         } from '../../assets/data/mainInfoOptions.json';
 import { useAppContext } from "../AppProvider/AppProvider";
-import { useRouteMatch } from "react-router";
+import { useRouteMatch } from "react-router-dom";
 
 
-const MainPage = () =>{
-    const {handleOpenPage} = useAppContext();
+const MainPage = ({history}) =>{
+    // const {handleOpenPage} = useAppContext();
+    const openTransactionPage = (transType) =>
+    history.push("/transaction/" + transType);
+    const openTransactionHistoryPage = (transType) =>
+    history.push("/history/" + transType);
+    const openBalancePage = () => 
+    history.push("/balance");
 
     return (
 <section>
@@ -18,21 +24,21 @@ const MainPage = () =>{
     title={"Расходи"} 
     options={mainInfoCosts} 
     activePage='costs'
-    handleOpenPage={handleOpenPage}
+    handleOpenPage={openTransactionPage}
     />
     <MainInfo 
     title={"Доходи"} 
     options={mainInfoIncomes} 
     activePage='incomes'
-    handleOpenPage={handleOpenPage}
+    handleOpenPage={openTransactionPage}
     />
     <MainInfo 
     title={"Баланс"} 
     options={mainInfoBalance} 
     activePage='balance'
-    handleOpenPage={handleOpenPage}
+    handleOpenPage={openBalancePage}
     />
-    <StatisticsBtns handleOpenPage={handleOpenPage}/>
+    <StatisticsBtns handleOpenPage={openTransactionHistoryPage}/>
 </section>
 
     );
